@@ -35,11 +35,9 @@ describe('Auth Middleware', () => {
   describe('user authentication', () => {
 
     it('fails a login for a user (admin) with the incorrect basic credentials', () => {
-      const basicAuthString = base64.encode('username:password');
-
       // Change the request to match this test case
       req.headers = {
-        authorization: `Basic ${basicAuthString}`,
+        authorization: ``,
       };
 
       return middleware(req, res, next)

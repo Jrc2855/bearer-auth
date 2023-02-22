@@ -11,8 +11,8 @@ const DATABASE_CONFIG = process.env.NODE_ENV === 'production' ? {
     ssl: {
       require: true,
       rejectUnauthorized: false,
-    }
-  }
+    },
+  },
 } : {};
 
 const sequelize = new Sequelize(DATABASE_URL, DATABASE_CONFIG);

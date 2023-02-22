@@ -1,6 +1,6 @@
 'use strict';
 
-process.env.SECRET = "TEST_SECRET";
+process.env.SECRET = 'TEST_SECRET';
 
 const bearer = require('../../../../src/auth/middleware/bearer.js');
 const { db, users } = require('../../../../src/auth/models/index.js');
@@ -54,7 +54,6 @@ describe('Auth Middleware', () => {
       req.headers = {
         authorization: `Bearer ${token}`,
       };
-
       return bearer(req, res, next)
         .then(() => {
           expect(next).toHaveBeenCalledWith();
